@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;700;900&display=swap");
+
+.ptw-base {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.ptw-hide {
+  background-color: transparent;
+}
+
+.ptw-content {
+  width: min(90vw, 500px);
+  background-color: rgb(245, 245, 245);
+  color: rgb(58, 58, 58);
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  font-family: "Inconsolata", monospace;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.ptw-hide > .ptw-content {
+  transform: translateY(100vh);
+}
+
+.ptw-content h3 {
+  font-size: 1.5rem !important;
+  text-align: center;
+  margin: 1rem 0 !important;
+  font-weight: 700 !important;
+  color: #2d8064;
+  font-family: "Inconsolata", monospace !important;
+}
+
+.ptw-checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.ptw-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.ptw-buttons > button {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  font-weight: 700;
+  border: none;
+  background-color: #2d8064;
+  color: #fff;
+  font-family: "Inconsolata", monospace;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.ptw-buttons > button:hover {
+  background-color: #3a9275;
+  transform: translateY(-1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.ptw-checkbox {
+  position: absolute;
+  display: block;
+  opacity: 0;
+}
+
+.ptw-checkbox + label {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding: 0;
+  font-weight: 500;
+}
+
+.ptw-checkbox + label::before {
+  content: "";
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 3px;
+}
+
+.ptw-checkbox:focus + label::before {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+
+.ptw-checkbox:checked + label::before {
+  background: #2d8064;
+}
+
+.ptw-checkbox:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  background: white;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
+    4px -6px 0 white, 4px -8px 0 white;
+  transform: rotate(45deg);
+}
+
+.ptw-content *::selection {
+  color: #202020;
+  background: #cccccc !important;
+}
+
+.ptw-content a {
+  display: inline-block;
+  position: relative;
+  color: #2d8064;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ptw-content a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 1px;
+  left: 0;
+  background-color: #2d8064;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.ptw-content a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
