@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
       <label for="ptwCheckbox">don't show again</label>
    </div>
    <div class="ptw-buttons">
-      <button class="ptw-button-ok" id="ptwCloseBtn">CLOSE</button>
+      <button class="ptw-button-ok" id="ptwCloseBtn">UNDERSTOOD</button>
    </div>
   </div>
   `;
