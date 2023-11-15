@@ -1,6 +1,13 @@
 const storageKey = 'portfolio-warning-dismissed';
 
 document.addEventListener("DOMContentLoaded", function (e) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const hideDisclaimer = urlParams.get('hideDisclaimer');
+
+  if (hideDisclaimer) {
+    localStorage.setItem(storageKey, "true");
+  }
+
   const dismissed = localStorage.getItem(storageKey);
   if (dismissed) return;
   const el = document.body.appendChild(document.createElement("div"));
